@@ -1,0 +1,2859 @@
+$petit_bordo: #b02d70;
+$petit_rose: #e00a81;
+
+@import "./reset";
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+// body {
+//   width: 100vw;
+//   height: 100vh;
+//   background-image: url(../img/proba.jpg);
+//   background-position: top;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   overflow: hidden;
+// }
+
+.background--container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../img/proba_max.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: $petit_bordo, $alpha: 0.8);
+  display: none;
+
+  &.active {
+    z-index: 1;
+    display: block;
+  }
+}
+
+.main_container {
+  position: absolute;
+  bottom: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100vw;
+  height: 90vh;
+}
+
+.sil {
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 3.5em;
+  right: 2.5em;
+  width: 3%;
+  height: auto;
+  border: 0.3em solid $petit_bordo;
+  border-radius: 50%;
+  background-color: white;
+  color: $petit_bordo;
+  font-weight: 700;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+  }
+
+  &.active {
+    z-index: 0;
+  }
+}
+
+.sil_ekran {
+  z-index: 15;
+  position: absolute;
+  width: 70%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: scale(0) translate(-50%, -50%);
+  background-image: url(../img/sil.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.5s;
+
+  &.active {
+    transform: scale(1) translate(-50%, -50%);
+  }
+
+  .close {
+    position: absolute;
+    width: 5em;
+    height: 5em;
+    right: 9em;
+    top: 8em;
+    background-image: url(../img/cross.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $petit_bordo;
+    border: 0.3em solid white;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
+.pack_container {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 45%;
+  height: 50%;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
+    transform: translate(0, 0) scale(1);
+    transition: 0.5s;
+
+    img.pack {
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  .dawkowanie {
+    position: absolute;
+    top: 13em;
+    transform: scale(0);
+  }
+
+  .plain {
+    z-index: 1;
+    cursor: pointer;
+
+    &.active {
+      z-index: 20;
+      transform: translate(50%, 30%) scale(1.5);
+
+      .dawkowanie {
+        transform: scale(2);
+      }
+    }
+  }
+  .junior {
+    z-index: 1;
+    cursor: pointer;
+
+    &.active {
+      z-index: 20;
+      transform: translate(-50%, 50%) scale(1.5);
+
+      .dawkowanie {
+        top: 11em;
+        transform: scale(2);
+      }
+    }
+  }
+}
+
+.btn_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 65%;
+  bottom: 0;
+}
+
+.mechanic {
+  z-index: 15;
+  position: absolute;
+  width: 50%;
+  height: 70vh;
+  top: 50%;
+  left: 50%;
+  transform: scale(0) translate(-50%, -50%);
+  background-image: url(../img/dzialanie_mech.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    z-index: 0;
+    width: 33%;
+    transform: scale(1);
+    transition: 0.5s;
+
+    &.active {
+      z-index: 5;
+      transform: scale(2.5);
+      filter: drop-shadow(0 0 2em rgba(black, 0.9));
+    }
+  }
+
+  &.active {
+    top: 50%;
+    left: 50%;
+    transform: scale(1) translate(-50%, -50%);
+  }
+
+  .close {
+    position: absolute;
+    width: 5em;
+    height: 5em;
+    right: 3em;
+    top: 3em;
+    background-image: url(../img/cross.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $petit_bordo;
+    border: 0.3em solid white;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
+.kolko {
+  position: absolute;
+  width: 17%;
+  // height: 12rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.5s;
+  top: 50%;
+  left: 50%;
+  transform: scale(1) translate(-50%, -50%);
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &.active {
+    position: absolute;
+    z-index: 10;
+    box-shadow: 0 0 3em rgba($color: #000000, $alpha: 0.9);
+  }
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    top: 1em;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    background-color: darksalmon;
+    transform: translate(-50%, -50%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &:nth-of-type(1) {
+    // background-image: url(../img/kolko_PTP.svg);
+    top: -20%;
+    left: 2%;
+    transform: scale(1);
+
+    &.active {
+      top: -0%;
+      left: 15%;
+      transform: scale(2.5);
+    }
+
+    .logo {
+      background-image: url(../img/PTP.png);
+    }
+  }
+  &:nth-of-type(2) {
+    // background-image: url(../img/kolko_WHO.svg);
+    top: -20%;
+    left: 82%;
+    transform: scale(1);
+
+    &.active {
+      top: -0%;
+      left: 65%;
+      transform: scale(2.5);
+    }
+
+    .logo {
+      background-image: url(../img/WHO.svg);
+    }
+  }
+  &:nth-of-type(3) {
+    // background-image: url(../img/kolko_od_6_mies@4x.png);
+    top: 18%;
+    left: 12%;
+    transform: scale(1);
+
+    &.active {
+      top: 24%;
+      left: 18%;
+      transform: scale(2.5);
+    }
+  }
+
+  &:nth-of-type(4) {
+    // background-image: url(../img/kolko_parabeny.svg);
+    top: 18%;
+    left: 72%;
+    transform: scale(1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      display: block;
+    }
+
+    #kolko_para {
+      opacity: 1;
+      transition: 0.5s;
+      position: relative;
+    }
+
+    #kolko_bezy {
+      opacity: 0;
+      transition: 0.5s;
+      // display: none;
+      position: absolute;
+    }
+
+    &.active {
+      top: 20%;
+      left: 50%;
+      transform: scale(2.5);
+
+      #kolko_para {
+        opacity: 0;
+      }
+
+      #kolko_bezy {
+        opacity: 1;
+      }
+    }
+  }
+
+  // =====   DZIALANIA MECHANICZNE   =====
+
+  &:nth-of-type(5) {
+    // background-image: url(../img/kolko_mechaniczne.svg);
+    top: 65%;
+    left: 35%;
+  }
+
+  // =====   BEZ ALKO   =====
+
+  &:nth-of-type(6) {
+    background-image: url(../img/kolko_alko.svg);
+    top: 65%;
+    left: 65%;
+    transition: 0.5s;
+    transform: scale(1) translate(-50%, -50%);
+
+    img {
+      transition: 0.5s;
+      opacity: 0;
+    }
+
+    &.active {
+      transform: scale(2.5) translate(-50%, -50%);
+
+      img {
+        opacity: 1;
+      }
+    }
+  }
+
+  // ======   NITE AND DAY   ======
+
+  &:nth-of-type(7) {
+    // background-image: url(../img/kolko_na_dzien.svg);
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .planets {
+      display: none;
+    }
+
+    &.active {
+      top: 50%;
+      left: 50%;
+      transform: scale(2.5) translate(-25%, -50%);
+
+      .planets {
+        display: block;
+        box-shadow: 0 0 3em rgba($color: #000000, $alpha: 0);
+        background-color: rgba($color: white, $alpha: 0);
+      }
+
+      div {
+        position: absolute;
+        width: 4em;
+        height: 4em;
+        border-radius: 50%;
+        box-shadow: 0 0 2em rgba($color: orange, $alpha: 1);
+        background-color: rgba($color: white, $alpha: 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: turn 4s linear infinite;
+
+        @keyframes turn {
+          0% {
+            transform: rotate(0);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+
+        img {
+          width: 3em;
+          height: 3em;
+        }
+
+        .sun {
+          left: -5em;
+          animation: turn2 5s linear infinite;
+
+          @keyframes turn2 {
+            0% {
+              transform: rotate(0);
+            }
+            100% {
+              transform: rotate(-720deg);
+            }
+          }
+        }
+        .moon {
+          right: -5em;
+          // box-shadow: 0 0 2em rgba($color: white, $alpha: 0.9);
+
+          animation: turn3 4s linear infinite;
+
+          @keyframes turn3 {
+            0% {
+              transform: rotate(0);
+            }
+            100% {
+              transform: rotate(-360deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1160px) {
+  .background--container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/proba_4.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  #overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $petit_bordo, $alpha: 0.8);
+    display: none;
+
+    &.active {
+      z-index: 1;
+      display: block;
+    }
+  }
+
+  .main_container {
+    position: absolute;
+    bottom: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: 90vh;
+  }
+
+  .sil {
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 3.5em;
+    right: 1em;
+    width: 5%;
+    height: auto;
+    border: 0.3em solid $petit_bordo;
+    border-radius: 50%;
+    background-color: white;
+    color: $petit_bordo;
+    font-weight: 700;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+
+    &.active {
+      z-index: 0;
+    }
+  }
+
+  .sil_ekran {
+    z-index: 15;
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: scale(0) translate(-50%, -50%);
+    background-image: url(../img/sil.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.5s;
+
+    &.active {
+      transform: scale(1) translate(-50%, -50%);
+    }
+
+    .close {
+      position: absolute;
+      width: 5em;
+      height: 5em;
+      right: 9em;
+      top: 8em;
+      background-image: url(../img/cross.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: $petit_bordo;
+      border: 0.3em solid white;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+  .pack_container {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 50%;
+    height: 40%;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 50%;
+      transform: translate(0, 0) scale(1);
+      transition: 0.5s;
+
+      img.pack {
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    .dawkowanie {
+      position: absolute;
+      top: 13em;
+      transform: scale(0);
+    }
+
+    .plain {
+      z-index: 1;
+      cursor: pointer;
+
+      &.active {
+        z-index: 20;
+        transform: translate(50%, 30%) scale(1.5);
+
+        .dawkowanie {
+          transform: scale(2);
+        }
+      }
+    }
+    .junior {
+      z-index: 1;
+      cursor: pointer;
+
+      &.active {
+        z-index: 20;
+        transform: translate(-50%, 50%) scale(1.5);
+
+        .dawkowanie {
+          top: 11em;
+          transform: scale(2);
+        }
+      }
+    }
+  }
+
+  .btn_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 65%;
+    bottom: 0;
+  }
+
+  .mechanic {
+    z-index: 15;
+    position: absolute;
+    width: 50%;
+    height: 70vh;
+    top: 50%;
+    left: 50%;
+    transform: scale(0) translate(-50%, -50%);
+    background-image: url(../img/dzialanie_mech.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      z-index: 0;
+      width: 33%;
+      transform: scale(1);
+      transition: 0.5s;
+
+      &.active {
+        z-index: 5;
+        transform: scale(2.5);
+        filter: drop-shadow(0 0 2em rgba(black, 0.9));
+      }
+    }
+
+    &.active {
+      top: 50%;
+      left: 50%;
+      transform: scale(1) translate(-50%, -50%);
+    }
+
+    .close {
+      position: absolute;
+      width: 5em;
+      height: 5em;
+      right: 3em;
+      top: 3em;
+      background-image: url(../img/cross.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: $petit_bordo;
+      border: 0.3em solid white;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+  .kolko {
+    position: absolute;
+    width: 17%;
+    // height: 12rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.5s;
+    top: 50%;
+    left: 50%;
+    transform: scale(1) translate(-50%, -50%);
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    &.active {
+      position: absolute;
+      z-index: 10;
+      box-shadow: 0 0 3em rgba($color: #000000, $alpha: 0.9);
+    }
+
+    .logo {
+      position: absolute;
+      left: 50%;
+      top: 1em;
+      width: 4em;
+      height: 4em;
+      border-radius: 50%;
+      background-color: darksalmon;
+      transform: translate(-50%, -50%);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &:nth-of-type(1) {
+      // background-image: url(../img/kolko_PTP.svg);
+      top: -20%;
+      left: 2%;
+      transform: scale(1);
+
+      &.active {
+        top: -0%;
+        left: 15%;
+        transform: scale(2.5);
+      }
+
+      .logo {
+        background-image: url(../img/PTP.png);
+      }
+    }
+    &:nth-of-type(2) {
+      // background-image: url(../img/kolko_WHO.svg);
+      top: -20%;
+      left: 82%;
+      transform: scale(1);
+
+      &.active {
+        top: -0%;
+        left: 65%;
+        transform: scale(2.5);
+      }
+
+      .logo {
+        background-image: url(../img/WHO.svg);
+      }
+    }
+    &:nth-of-type(3) {
+      // background-image: url(../img/kolko_od_6_mies@4x.png);
+      top: 18%;
+      left: 8%;
+      transform: scale(1);
+
+      &.active {
+        top: 24%;
+        left: 18%;
+        transform: scale(2.5);
+      }
+    }
+
+    &:nth-of-type(4) {
+      // background-image: url(../img/kolko_parabeny.svg);
+      top: 18%;
+      left: 75%;
+      transform: scale(1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        display: block;
+      }
+
+      #kolko_para {
+        opacity: 1;
+        transition: 0.5s;
+        position: relative;
+      }
+
+      #kolko_bezy {
+        opacity: 0;
+        transition: 0.5s;
+        // display: none;
+        position: absolute;
+      }
+
+      &.active {
+        top: 20%;
+        left: 50%;
+        transform: scale(2.5);
+
+        #kolko_para {
+          opacity: 0;
+        }
+
+        #kolko_bezy {
+          opacity: 1;
+        }
+      }
+    }
+
+    // =====   DZIALANIA MECHANICZNE   =====
+
+    &:nth-of-type(5) {
+      // background-image: url(../img/kolko_mechaniczne.svg);
+      top: 65%;
+      left: 30%;
+    }
+
+    // =====   BEZ ALKO   =====
+
+    &:nth-of-type(6) {
+      background-image: url(../img/kolko_alko.svg);
+      top: 65%;
+      left: 70%;
+      transition: 0.5s;
+      transform: scale(1) translate(-50%, -50%);
+
+      img {
+        transition: 0.5s;
+        opacity: 0;
+      }
+
+      &.active {
+        transform: scale(2.5) translate(-50%, -50%);
+
+        img {
+          opacity: 1;
+        }
+      }
+    }
+
+    // ======   NITE AND DAY   ======
+
+    &:nth-of-type(7) {
+      // background-image: url(../img/kolko_na_dzien.svg);
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .planets {
+        display: none;
+      }
+
+      &.active {
+        top: 50%;
+        left: 50%;
+        transform: scale(2.5) translate(-25%, -50%);
+
+        .planets {
+          display: block;
+          box-shadow: 0 0 3em rgba($color: #000000, $alpha: 0);
+          background-color: rgba($color: white, $alpha: 0);
+        }
+
+        div {
+          position: absolute;
+          width: 4em;
+          height: 4em;
+          border-radius: 50%;
+          box-shadow: 0 0 2em rgba($color: orange, $alpha: 1);
+          background-color: rgba($color: white, $alpha: 0.7);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          animation: turn 4s linear infinite;
+
+          @keyframes turn {
+            0% {
+              transform: rotate(0);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+
+          img {
+            width: 3em;
+            height: 3em;
+          }
+
+          .sun {
+            left: -5em;
+            animation: turn2 5s linear infinite;
+
+            @keyframes turn2 {
+              0% {
+                transform: rotate(0);
+              }
+              100% {
+                transform: rotate(-720deg);
+              }
+            }
+          }
+          .moon {
+            right: -5em;
+            // box-shadow: 0 0 2em rgba($color: white, $alpha: 0.9);
+
+            animation: turn3 4s linear infinite;
+
+            @keyframes turn3 {
+              0% {
+                transform: rotate(0);
+              }
+              100% {
+                transform: rotate(-360deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1110px) {
+  .background--container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/proba.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  #overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $petit_bordo, $alpha: 0.8);
+    display: none;
+
+    &.active {
+      z-index: 1;
+      display: block;
+    }
+  }
+
+  .main_container {
+    position: absolute;
+    bottom: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: 90vh;
+  }
+
+  .sil {
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 3.5em;
+    right: 1em;
+    width: 5%;
+    height: auto;
+    border: 0.3em solid $petit_bordo;
+    border-radius: 50%;
+    background-color: white;
+    color: $petit_bordo;
+    font-weight: 700;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+
+    &.active {
+      z-index: 0;
+    }
+  }
+
+  .sil_ekran {
+    z-index: 15;
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: scale(0) translate(-50%, -50%);
+    background-image: url(../img/sil.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.5s;
+
+    &.active {
+      transform: scale(1) translate(-50%, -50%);
+    }
+
+    .close {
+      position: absolute;
+      width: 5em;
+      height: 5em;
+      right: 9em;
+      top: 8em;
+      background-image: url(../img/cross.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: $petit_bordo;
+      border: 0.3em solid white;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+  .pack_container {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 50%;
+    height: 40%;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 50%;
+      transform: translate(0, 0) scale(1);
+      transition: 0.5s;
+
+      img.pack {
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    .dawkowanie {
+      position: absolute;
+      top: 13em;
+      transform: scale(0);
+    }
+
+    .plain {
+      z-index: 1;
+      cursor: pointer;
+
+      &.active {
+        z-index: 20;
+        transform: translate(50%, 30%) scale(1.5);
+
+        .dawkowanie {
+          transform: scale(2);
+        }
+      }
+    }
+    .junior {
+      z-index: 1;
+      cursor: pointer;
+
+      &.active {
+        z-index: 20;
+        transform: translate(-50%, 50%) scale(1.5);
+
+        .dawkowanie {
+          top: 11em;
+          transform: scale(2);
+        }
+      }
+    }
+  }
+
+  .btn_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 65%;
+    bottom: 0;
+  }
+
+  .mechanic {
+    z-index: 15;
+    position: absolute;
+    width: 50%;
+    height: 70vh;
+    top: 50%;
+    left: 50%;
+    transform: scale(0) translate(-50%, -50%);
+    background-image: url(../img/dzialanie_mech.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      z-index: 0;
+      width: 33%;
+      transform: scale(1);
+      transition: 0.5s;
+
+      &.active {
+        z-index: 5;
+        transform: scale(2.5);
+        filter: drop-shadow(0 0 2em rgba(black, 0.9));
+      }
+    }
+
+    &.active {
+      top: 50%;
+      left: 50%;
+      transform: scale(1) translate(-50%, -50%);
+    }
+
+    .close {
+      position: absolute;
+      width: 5em;
+      height: 5em;
+      right: 3em;
+      top: 3em;
+      background-image: url(../img/cross.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: $petit_bordo;
+      border: 0.3em solid white;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+  .kolko {
+    position: absolute;
+    width: 17%;
+    // height: 12rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.5s;
+    top: 50%;
+    left: 50%;
+    transform: scale(1) translate(-50%, -50%);
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    &.active {
+      position: absolute;
+      z-index: 10;
+      box-shadow: 0 0 3em rgba($color: #000000, $alpha: 0.9);
+    }
+
+    .logo {
+      position: absolute;
+      left: 50%;
+      top: 1em;
+      width: 4em;
+      height: 4em;
+      border-radius: 50%;
+      background-color: darksalmon;
+      transform: translate(-50%, -50%);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &:nth-of-type(1) {
+      // background-image: url(../img/kolko_PTP.svg);
+      top: -20%;
+      left: 2%;
+      transform: scale(1);
+
+      &.active {
+        top: -0%;
+        left: 15%;
+        transform: scale(2.5);
+      }
+
+      .logo {
+        background-image: url(../img/PTP.png);
+      }
+    }
+    &:nth-of-type(2) {
+      // background-image: url(../img/kolko_WHO.svg);
+      top: -20%;
+      left: 82%;
+      transform: scale(1);
+
+      &.active {
+        top: -0%;
+        left: 65%;
+        transform: scale(2.5);
+      }
+
+      .logo {
+        background-image: url(../img/WHO.svg);
+      }
+    }
+    &:nth-of-type(3) {
+      // background-image: url(../img/kolko_od_6_mies@4x.png);
+      top: 18%;
+      left: 8%;
+      transform: scale(1);
+
+      &.active {
+        top: 24%;
+        left: 18%;
+        transform: scale(2.5);
+      }
+    }
+
+    &:nth-of-type(4) {
+      // background-image: url(../img/kolko_parabeny.svg);
+      top: 18%;
+      left: 75%;
+      transform: scale(1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        display: block;
+      }
+
+      #kolko_para {
+        opacity: 1;
+        transition: 0.5s;
+        position: relative;
+      }
+
+      #kolko_bezy {
+        opacity: 0;
+        transition: 0.5s;
+        // display: none;
+        position: absolute;
+      }
+
+      &.active {
+        top: 20%;
+        left: 50%;
+        transform: scale(2.5);
+
+        #kolko_para {
+          opacity: 0;
+        }
+
+        #kolko_bezy {
+          opacity: 1;
+        }
+      }
+    }
+
+    // =====   DZIALANIA MECHANICZNE   =====
+
+    &:nth-of-type(5) {
+      // background-image: url(../img/kolko_mechaniczne.svg);
+      top: 65%;
+      left: 30%;
+    }
+
+    // =====   BEZ ALKO   =====
+
+    &:nth-of-type(6) {
+      background-image: url(../img/kolko_alko.svg);
+      top: 65%;
+      left: 70%;
+      transition: 0.5s;
+      transform: scale(1) translate(-50%, -50%);
+
+      img {
+        transition: 0.5s;
+        opacity: 0;
+      }
+
+      &.active {
+        transform: scale(2.5) translate(-50%, -50%);
+
+        img {
+          opacity: 1;
+        }
+      }
+    }
+
+    // ======   NITE AND DAY   ======
+
+    &:nth-of-type(7) {
+      // background-image: url(../img/kolko_na_dzien.svg);
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .planets {
+        display: none;
+      }
+
+      &.active {
+        top: 50%;
+        left: 50%;
+        transform: scale(2.5) translate(-25%, -50%);
+
+        .planets {
+          display: block;
+          box-shadow: 0 0 3em rgba($color: #000000, $alpha: 0);
+          background-color: rgba($color: white, $alpha: 0);
+        }
+
+        div {
+          position: absolute;
+          width: 4em;
+          height: 4em;
+          border-radius: 50%;
+          box-shadow: 0 0 2em rgba($color: orange, $alpha: 1);
+          background-color: rgba($color: white, $alpha: 0.7);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          animation: turn 4s linear infinite;
+
+          @keyframes turn {
+            0% {
+              transform: rotate(0);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+
+          img {
+            width: 3em;
+            height: 3em;
+          }
+
+          .sun {
+            left: -5em;
+            animation: turn2 5s linear infinite;
+
+            @keyframes turn2 {
+              0% {
+                transform: rotate(0);
+              }
+              100% {
+                transform: rotate(-720deg);
+              }
+            }
+          }
+          .moon {
+            right: -5em;
+            // box-shadow: 0 0 2em rgba($color: white, $alpha: 0.9);
+
+            animation: turn3 4s linear infinite;
+
+            @keyframes turn3 {
+              0% {
+                transform: rotate(0);
+              }
+              100% {
+                transform: rotate(-360deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .background--container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/proba_2.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  #overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $petit_bordo, $alpha: 0.8);
+    display: none;
+
+    &.active {
+      z-index: 1;
+      display: block;
+    }
+  }
+
+  .main_container {
+    position: absolute;
+    bottom: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: 90vh;
+  }
+
+  .sil {
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 3.5em;
+    right: 1em;
+    width: 5%;
+    height: auto;
+    border: 0.3em solid $petit_bordo;
+    border-radius: 50%;
+    background-color: white;
+    color: $petit_bordo;
+    font-weight: 700;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+
+    &.active {
+      z-index: 0;
+    }
+  }
+
+  .sil_ekran {
+    z-index: 15;
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: scale(0) translate(-50%, -50%);
+    background-image: url(../img/sil.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.5s;
+
+    &.active {
+      transform: scale(1) translate(-50%, -50%);
+    }
+
+    .close {
+      position: absolute;
+      width: 5em;
+      height: 5em;
+      right: 9em;
+      top: 8em;
+      background-image: url(../img/cross.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: $petit_bordo;
+      border: 0.3em solid white;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+  .pack_container {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 50%;
+    height: 40%;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 50%;
+      transform: translate(0, 0) scale(1);
+      transition: 0.5s;
+
+      img.pack {
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    .dawkowanie {
+      position: absolute;
+      top: 13em;
+      transform: scale(0);
+    }
+
+    .plain {
+      z-index: 1;
+      cursor: pointer;
+
+      &.active {
+        z-index: 20;
+        transform: translate(50%, 30%) scale(1.5);
+
+        .dawkowanie {
+          transform: scale(2);
+        }
+      }
+    }
+    .junior {
+      z-index: 1;
+      cursor: pointer;
+
+      &.active {
+        z-index: 20;
+        transform: translate(-50%, 50%) scale(1.5);
+
+        .dawkowanie {
+          top: 11em;
+          transform: scale(2);
+        }
+      }
+    }
+  }
+
+  .btn_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 65%;
+    bottom: 0;
+  }
+
+  .mechanic {
+    z-index: 15;
+    position: absolute;
+    width: 50%;
+    height: 70vh;
+    top: 50%;
+    left: 50%;
+    transform: scale(0) translate(-50%, -50%);
+    background-image: url(../img/dzialanie_mech.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      z-index: 0;
+      width: 33%;
+      transform: scale(1);
+      transition: 0.5s;
+
+      &.active {
+        z-index: 5;
+        transform: scale(2.5);
+        filter: drop-shadow(0 0 2em rgba(black, 0.9));
+      }
+    }
+
+    &.active {
+      top: 50%;
+      left: 50%;
+      transform: scale(1) translate(-50%, -50%);
+    }
+
+    .close {
+      position: absolute;
+      width: 5em;
+      height: 5em;
+      right: 3em;
+      top: 3em;
+      background-image: url(../img/cross.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: $petit_bordo;
+      border: 0.3em solid white;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+  .kolko {
+    position: absolute;
+    width: 17%;
+    // height: 12rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.5s;
+    top: 50%;
+    left: 50%;
+    transform: scale(1) translate(-50%, -50%);
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    &.active {
+      position: absolute;
+      z-index: 10;
+      box-shadow: 0 0 3em rgba($color: #000000, $alpha: 0.9);
+    }
+
+    .logo {
+      position: absolute;
+      left: 50%;
+      top: 1em;
+      width: 4em;
+      height: 4em;
+      border-radius: 50%;
+      background-color: darksalmon;
+      transform: translate(-50%, -50%);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &:nth-of-type(1) {
+      // background-image: url(../img/kolko_PTP.svg);
+      top: -20%;
+      left: 2%;
+      transform: scale(1);
+
+      &.active {
+        top: -0%;
+        left: 15%;
+        transform: scale(2.5);
+      }
+
+      .logo {
+        background-image: url(../img/PTP.png);
+      }
+    }
+    &:nth-of-type(2) {
+      // background-image: url(../img/kolko_WHO.svg);
+      top: -20%;
+      left: 82%;
+      transform: scale(1);
+
+      &.active {
+        top: -0%;
+        left: 65%;
+        transform: scale(2.5);
+      }
+
+      .logo {
+        background-image: url(../img/WHO.svg);
+      }
+    }
+    &:nth-of-type(3) {
+      // background-image: url(../img/kolko_od_6_mies@4x.png);
+      top: 18%;
+      left: 8%;
+      transform: scale(1);
+
+      &.active {
+        top: 24%;
+        left: 18%;
+        transform: scale(2.5);
+      }
+    }
+
+    &:nth-of-type(4) {
+      // background-image: url(../img/kolko_parabeny.svg);
+      top: 18%;
+      left: 75%;
+      transform: scale(1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        display: block;
+      }
+
+      #kolko_para {
+        opacity: 1;
+        transition: 0.5s;
+        position: relative;
+      }
+
+      #kolko_bezy {
+        opacity: 0;
+        transition: 0.5s;
+        // display: none;
+        position: absolute;
+      }
+
+      &.active {
+        top: 20%;
+        left: 50%;
+        transform: scale(2.5);
+
+        #kolko_para {
+          opacity: 0;
+        }
+
+        #kolko_bezy {
+          opacity: 1;
+        }
+      }
+    }
+
+    // =====   DZIALANIA MECHANICZNE   =====
+
+    &:nth-of-type(5) {
+      // background-image: url(../img/kolko_mechaniczne.svg);
+      top: 65%;
+      left: 30%;
+    }
+
+    // =====   BEZ ALKO   =====
+
+    &:nth-of-type(6) {
+      background-image: url(../img/kolko_alko.svg);
+      top: 65%;
+      left: 70%;
+      transition: 0.5s;
+      transform: scale(1) translate(-50%, -50%);
+
+      img {
+        transition: 0.5s;
+        opacity: 0;
+      }
+
+      &.active {
+        transform: scale(2.5) translate(-50%, -50%);
+
+        img {
+          opacity: 1;
+        }
+      }
+    }
+
+    // ======   NITE AND DAY   ======
+
+    &:nth-of-type(7) {
+      // background-image: url(../img/kolko_na_dzien.svg);
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .planets {
+        display: none;
+      }
+
+      &.active {
+        top: 50%;
+        left: 50%;
+        transform: scale(2.5) translate(-25%, -50%);
+
+        .planets {
+          display: block;
+          box-shadow: 0 0 3em rgba($color: #000000, $alpha: 0);
+          background-color: rgba($color: white, $alpha: 0);
+        }
+
+        div {
+          position: absolute;
+          width: 4em;
+          height: 4em;
+          border-radius: 50%;
+          box-shadow: 0 0 2em rgba($color: orange, $alpha: 1);
+          background-color: rgba($color: white, $alpha: 0.7);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          animation: turn 4s linear infinite;
+
+          @keyframes turn {
+            0% {
+              transform: rotate(0);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+
+          img {
+            width: 3em;
+            height: 3em;
+          }
+
+          .sun {
+            left: -5em;
+            animation: turn2 5s linear infinite;
+
+            @keyframes turn2 {
+              0% {
+                transform: rotate(0);
+              }
+              100% {
+                transform: rotate(-720deg);
+              }
+            }
+          }
+          .moon {
+            right: -5em;
+            // box-shadow: 0 0 2em rgba($color: white, $alpha: 0.9);
+
+            animation: turn3 4s linear infinite;
+
+            @keyframes turn3 {
+              0% {
+                transform: rotate(0);
+              }
+              100% {
+                transform: rotate(-360deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .background--container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/proba_3.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  #overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $petit_bordo, $alpha: 0.8);
+    display: none;
+
+    &.active {
+      z-index: 1;
+      display: block;
+    }
+  }
+
+  .main_container {
+    position: absolute;
+    bottom: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: 90vh;
+  }
+
+  .sil {
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 3.5em;
+    right: 1em;
+    width: 5%;
+    height: auto;
+    border: 0.3em solid $petit_bordo;
+    border-radius: 50%;
+    background-color: white;
+    color: $petit_bordo;
+    font-weight: 700;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+
+    &.active {
+      z-index: 0;
+    }
+  }
+
+  .sil_ekran {
+    z-index: 15;
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: scale(0) translate(-50%, -50%);
+    background-image: url(../img/sil.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.5s;
+
+    &.active {
+      transform: scale(1) translate(-50%, -50%);
+    }
+
+    .close {
+      position: absolute;
+      width: 5em;
+      height: 5em;
+      right: 9em;
+      top: 8em;
+      background-image: url(../img/cross.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: $petit_bordo;
+      border: 0.3em solid white;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+  .pack_container {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 50%;
+    height: 37%;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 50%;
+      transform: translate(0, 0) scale(1);
+      transition: 0.5s;
+
+      img.pack {
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    .dawkowanie {
+      position: absolute;
+      top: 13em;
+      transform: scale(0);
+    }
+
+    .plain {
+      z-index: 1;
+      cursor: pointer;
+
+      &.active {
+        z-index: 20;
+        transform: translate(50%, 30%) scale(1.5);
+
+        .dawkowanie {
+          transform: scale(2);
+        }
+      }
+    }
+    .junior {
+      z-index: 1;
+      cursor: pointer;
+
+      &.active {
+        z-index: 20;
+        transform: translate(-50%, 50%) scale(1.5);
+
+        .dawkowanie {
+          top: 11em;
+          transform: scale(2);
+        }
+      }
+    }
+  }
+
+  .btn_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 55%;
+    bottom: 0;
+  }
+
+  .mechanic {
+    z-index: 15;
+    position: absolute;
+    width: 50%;
+    height: 70vh;
+    top: 50%;
+    left: 50%;
+    transform: scale(0) translate(-50%, -50%);
+    background-image: url(../img/dzialanie_mech.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      z-index: 0;
+      width: 33%;
+      transform: scale(1);
+      transition: 0.5s;
+
+      &.active {
+        z-index: 5;
+        transform: scale(2.5);
+        filter: drop-shadow(0 0 2em rgba(black, 0.9));
+      }
+    }
+
+    &.active {
+      top: 50%;
+      left: 50%;
+      transform: scale(1) translate(-50%, -50%);
+    }
+
+    .close {
+      position: absolute;
+      width: 5em;
+      height: 5em;
+      right: 3em;
+      top: 3em;
+      background-image: url(../img/cross.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: $petit_bordo;
+      border: 0.3em solid white;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+  .kolko {
+    position: absolute;
+    width: 17%;
+    // height: 12rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.5s;
+    top: 50%;
+    left: 50%;
+    transform: scale(1) translate(-50%, -50%);
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    &.active {
+      position: absolute;
+      z-index: 10;
+      box-shadow: 0 0 3em rgba($color: #000000, $alpha: 0.9);
+    }
+
+    .logo {
+      position: absolute;
+      left: 50%;
+      top: 1em;
+      width: 4em;
+      height: 4em;
+      border-radius: 50%;
+      background-color: darksalmon;
+      transform: translate(-50%, -50%);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &:nth-of-type(1) {
+      // background-image: url(../img/kolko_PTP.svg);
+      top: -20%;
+      left: 2%;
+      transform: scale(1);
+
+      &.active {
+        top: -0%;
+        left: 15%;
+        transform: scale(2.5);
+      }
+
+      .logo {
+        background-image: url(../img/PTP.png);
+      }
+    }
+    &:nth-of-type(2) {
+      // background-image: url(../img/kolko_WHO.svg);
+      top: -20%;
+      left: 82%;
+      transform: scale(1);
+
+      &.active {
+        top: -0%;
+        left: 65%;
+        transform: scale(2.5);
+      }
+
+      .logo {
+        background-image: url(../img/WHO.svg);
+      }
+    }
+    &:nth-of-type(3) {
+      // background-image: url(../img/kolko_od_6_mies@4x.png);
+      top: 18%;
+      left: 8%;
+      transform: scale(1);
+
+      &.active {
+        top: 24%;
+        left: 18%;
+        transform: scale(2.5);
+      }
+    }
+
+    &:nth-of-type(4) {
+      // background-image: url(../img/kolko_parabeny.svg);
+      top: 18%;
+      left: 75%;
+      transform: scale(1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        display: block;
+      }
+
+      #kolko_para {
+        opacity: 1;
+        transition: 0.5s;
+        position: relative;
+      }
+
+      #kolko_bezy {
+        opacity: 0;
+        transition: 0.5s;
+        // display: none;
+        position: absolute;
+      }
+
+      &.active {
+        top: 20%;
+        left: 50%;
+        transform: scale(2.5);
+
+        #kolko_para {
+          opacity: 0;
+        }
+
+        #kolko_bezy {
+          opacity: 1;
+        }
+      }
+    }
+
+    // =====   DZIALANIA MECHANICZNE   =====
+
+    &:nth-of-type(5) {
+      // background-image: url(../img/kolko_mechaniczne.svg);
+      top: 65%;
+      left: 30%;
+    }
+
+    // =====   BEZ ALKO   =====
+
+    &:nth-of-type(6) {
+      background-image: url(../img/kolko_alko.svg);
+      top: 65%;
+      left: 70%;
+      transition: 0.5s;
+      transform: scale(1) translate(-50%, -50%);
+
+      img {
+        transition: 0.5s;
+        opacity: 0;
+      }
+
+      &.active {
+        transform: scale(2.5) translate(-50%, -50%);
+
+        img {
+          opacity: 1;
+        }
+      }
+    }
+
+    // ======   NITE AND DAY   ======
+
+    &:nth-of-type(7) {
+      // background-image: url(../img/kolko_na_dzien.svg);
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .planets {
+        display: none;
+      }
+
+      &.active {
+        top: 50%;
+        left: 50%;
+        transform: scale(2.5) translate(-25%, -50%);
+
+        .planets {
+          display: block;
+          box-shadow: 0 0 3em rgba($color: #000000, $alpha: 0);
+          background-color: rgba($color: white, $alpha: 0);
+        }
+
+        div {
+          position: absolute;
+          width: 4em;
+          height: 4em;
+          border-radius: 50%;
+          box-shadow: 0 0 2em rgba($color: orange, $alpha: 1);
+          background-color: rgba($color: white, $alpha: 0.7);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          animation: turn 4s linear infinite;
+
+          @keyframes turn {
+            0% {
+              transform: rotate(0);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+
+          img {
+            width: 3em;
+            height: 3em;
+          }
+
+          .sun {
+            left: -5em;
+            animation: turn2 5s linear infinite;
+
+            @keyframes turn2 {
+              0% {
+                transform: rotate(0);
+              }
+              100% {
+                transform: rotate(-720deg);
+              }
+            }
+          }
+          .moon {
+            right: -5em;
+            // box-shadow: 0 0 2em rgba($color: white, $alpha: 0.9);
+
+            animation: turn3 4s linear infinite;
+
+            @keyframes turn3 {
+              0% {
+                transform: rotate(0);
+              }
+              100% {
+                transform: rotate(-360deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .background--container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/proba_3.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  #overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $petit_bordo, $alpha: 0.8);
+    display: none;
+
+    &.active {
+      z-index: 1;
+      display: block;
+    }
+  }
+
+  .main_container {
+    position: absolute;
+    bottom: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: 90vh;
+  }
+
+  .sil {
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 3.5em;
+    right: 1em;
+    width: 5%;
+    height: auto;
+    border: 0.2em solid $petit_bordo;
+    border-radius: 50%;
+    background-color: white;
+    color: $petit_bordo;
+    font-weight: 700;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+
+    &.active {
+      z-index: 0;
+    }
+  }
+
+  .sil_ekran {
+    z-index: 15;
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: scale(0) translate(-50%, -50%);
+    background-image: url(../img/sil.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.5s;
+
+    &.active {
+      transform: scale(1) translate(-50%, -50%);
+    }
+
+    .close {
+      position: absolute;
+      width: 5em;
+      height: 5em;
+      right: 9em;
+      top: 8em;
+      background-image: url(../img/cross.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: $petit_bordo;
+      border: 0.3em solid white;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+  .pack_container {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 55%;
+    height: 32%;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 50%;
+      transform: translate(0, 0) scale(1);
+      transition: 0.5s;
+
+      img.pack {
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    .dawkowanie {
+      position: absolute;
+      top: 13em;
+      transform: scale(0);
+    }
+
+    .plain {
+      z-index: 1;
+      cursor: pointer;
+
+      &.active {
+        z-index: 20;
+        transform: translate(50%, 30%) scale(1.5);
+
+        .dawkowanie {
+          transform: scale(2);
+        }
+      }
+    }
+    .junior {
+      z-index: 1;
+      cursor: pointer;
+
+      &.active {
+        z-index: 20;
+        transform: translate(-50%, 50%) scale(1.5);
+
+        .dawkowanie {
+          top: 11em;
+          transform: scale(2);
+        }
+      }
+    }
+  }
+
+  .btn_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 95%;
+    height: 50%;
+    bottom: 0;
+  }
+
+  .mechanic {
+    z-index: 15;
+    position: absolute;
+    width: 50%;
+    height: 70vh;
+    top: 50%;
+    left: 50%;
+    transform: scale(0) translate(-50%, -50%);
+    background-image: url(../img/dzialanie_mech.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      z-index: 0;
+      width: 33%;
+      transform: scale(1);
+      transition: 0.5s;
+
+      &.active {
+        z-index: 5;
+        transform: scale(2.5);
+        filter: drop-shadow(0 0 2em rgba(black, 0.9));
+      }
+    }
+
+    &.active {
+      top: 50%;
+      left: 50%;
+      transform: scale(1) translate(-50%, -50%);
+    }
+
+    .close {
+      position: absolute;
+      width: 5em;
+      height: 5em;
+      right: 3em;
+      top: 3em;
+      background-image: url(../img/cross.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: $petit_bordo;
+      border: 0.3em solid white;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+  .kolko {
+    position: absolute;
+    width: 19%;
+    // height: 12rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.5s;
+    top: 50%;
+    left: 50%;
+    transform: scale(1) translate(-50%, -50%);
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    &.active {
+      position: absolute;
+      z-index: 10;
+      box-shadow: 0 0 3em rgba($color: #000000, $alpha: 0.9);
+    }
+
+    .logo {
+      position: absolute;
+      left: 50%;
+      top: 1em;
+      width: 2.6em;
+      height: 2.6em;
+      border-radius: 50%;
+      background-color: darksalmon;
+      transform: translate(-50%, -50%);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &:nth-of-type(1) {
+      // background-image: url(../img/kolko_PTP.svg);
+      top: -20%;
+      left: 2%;
+      transform: scale(1);
+
+      &.active {
+        top: -0%;
+        left: 15%;
+        transform: scale(2.5);
+      }
+
+      .logo {
+        background-image: url(../img/PTP.png);
+      }
+    }
+    &:nth-of-type(2) {
+      // background-image: url(../img/kolko_WHO.svg);
+      top: -20%;
+      left: 82%;
+      transform: scale(1);
+
+      &.active {
+        top: -0%;
+        left: 65%;
+        transform: scale(2.5);
+      }
+
+      .logo {
+        background-image: url(../img/WHO.svg);
+      }
+    }
+    &:nth-of-type(3) {
+      // background-image: url(../img/kolko_od_6_mies@4x.png);
+      top: 18%;
+      left: 8%;
+      transform: scale(1);
+
+      &.active {
+        top: 24%;
+        left: 18%;
+        transform: scale(2.5);
+      }
+    }
+
+    &:nth-of-type(4) {
+      // background-image: url(../img/kolko_parabeny.svg);
+      top: 18%;
+      left: 75%;
+      transform: scale(1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        display: block;
+      }
+
+      #kolko_para {
+        opacity: 1;
+        transition: 0.5s;
+        position: relative;
+      }
+
+      #kolko_bezy {
+        opacity: 0;
+        transition: 0.5s;
+        // display: none;
+        position: absolute;
+      }
+
+      &.active {
+        top: 20%;
+        left: 50%;
+        transform: scale(2.5);
+
+        #kolko_para {
+          opacity: 0;
+        }
+
+        #kolko_bezy {
+          opacity: 1;
+        }
+      }
+    }
+
+    // =====   DZIALANIA MECHANICZNE   =====
+
+    &:nth-of-type(5) {
+      // background-image: url(../img/kolko_mechaniczne.svg);
+      top: 65%;
+      left: 30%;
+    }
+
+    // =====   BEZ ALKO   =====
+
+    &:nth-of-type(6) {
+      background-image: url(../img/kolko_alko.svg);
+      top: 65%;
+      left: 70%;
+      transition: 0.5s;
+      transform: scale(1) translate(-50%, -50%);
+
+      img {
+        transition: 0.5s;
+        opacity: 0;
+      }
+
+      &.active {
+        transform: scale(2.5) translate(-50%, -50%);
+
+        img {
+          opacity: 1;
+        }
+      }
+    }
+
+    // ======   NITE AND DAY   ======
+
+    &:nth-of-type(7) {
+      // background-image: url(../img/kolko_na_dzien.svg);
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .planets {
+        display: none;
+      }
+
+      &.active {
+        top: 50%;
+        left: 50%;
+        transform: scale(2.5) translate(-25%, -50%);
+
+        .planets {
+          display: block;
+          box-shadow: 0 0 3em rgba($color: #000000, $alpha: 0);
+          background-color: rgba($color: white, $alpha: 0);
+        }
+
+        div {
+          position: absolute;
+          width: 4em;
+          height: 4em;
+          border-radius: 50%;
+          box-shadow: 0 0 2em rgba($color: orange, $alpha: 1);
+          background-color: rgba($color: white, $alpha: 0.7);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          animation: turn 4s linear infinite;
+
+          @keyframes turn {
+            0% {
+              transform: rotate(0);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+
+          img {
+            width: 3em;
+            height: 3em;
+          }
+
+          .sun {
+            left: -5em;
+            animation: turn2 5s linear infinite;
+
+            @keyframes turn2 {
+              0% {
+                transform: rotate(0);
+              }
+              100% {
+                transform: rotate(-720deg);
+              }
+            }
+          }
+          .moon {
+            right: -5em;
+            // box-shadow: 0 0 2em rgba($color: white, $alpha: 0.9);
+
+            animation: turn3 4s linear infinite;
+
+            @keyframes turn3 {
+              0% {
+                transform: rotate(0);
+              }
+              100% {
+                transform: rotate(-360deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
