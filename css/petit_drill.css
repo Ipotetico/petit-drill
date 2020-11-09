@@ -743,6 +743,548 @@ table {
   }
 }
 
+@media (max-width: 1370px) {
+  .background--container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/proba_4.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    overflow: hidden;
+  }
+  #overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(176, 45, 112, 0.8);
+    display: none;
+  }
+  #overlay.active {
+    z-index: 1;
+    display: block;
+  }
+  .main_container {
+    position: absolute;
+    bottom: 2em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: 90vh;
+  }
+  .sil {
+    z-index: 5;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    top: 3.5em;
+    right: 1em;
+    width: 5%;
+    height: auto;
+    border: 0.3em solid #b02d70;
+    border-radius: 50%;
+    background-color: white;
+    color: #b02d70;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .sil img {
+    width: 100%;
+  }
+  .sil.active {
+    z-index: 0;
+  }
+  .sil_ekran {
+    z-index: 15;
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: scale(0) translate(-50%, -50%);
+            transform: scale(0) translate(-50%, -50%);
+    background-image: url(../img/sil.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .sil_ekran.active {
+    -webkit-transform: scale(1) translate(-50%, -50%);
+            transform: scale(1) translate(-50%, -50%);
+  }
+  .sil_ekran .close {
+    position: absolute;
+    width: 5em;
+    height: 5em;
+    right: 9em;
+    top: 8em;
+    background-image: url(../img/cross.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #b02d70;
+    border: 0.3em solid white;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .pack_container {
+    z-index: 2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    width: 50%;
+    height: 40%;
+    top: 15%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .pack_container div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 100%;
+    width: 50%;
+    -webkit-transform: translate(0, 0) scale(1);
+            transform: translate(0, 0) scale(1);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .pack_container div img.pack {
+    width: auto;
+    height: 100%;
+  }
+  .pack_container .dawkowanie {
+    position: absolute;
+    top: 13em;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  .pack_container .plain {
+    z-index: 1;
+    cursor: pointer;
+  }
+  .pack_container .plain.active {
+    z-index: 20;
+    -webkit-transform: translate(50%, 30%) scale(1.5);
+            transform: translate(50%, 30%) scale(1.5);
+  }
+  .pack_container .plain.active .dawkowanie {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+  .pack_container .junior {
+    z-index: 1;
+    cursor: pointer;
+  }
+  .pack_container .junior.active {
+    z-index: 20;
+    -webkit-transform: translate(-50%, 50%) scale(1.5);
+            transform: translate(-50%, 50%) scale(1.5);
+  }
+  .pack_container .junior.active .dawkowanie {
+    top: 11em;
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+  .btn_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 65%;
+    bottom: 0;
+  }
+  .mechanic {
+    z-index: 15;
+    position: absolute;
+    width: 50%;
+    height: 70vh;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: scale(0) translate(-50%, -50%);
+            transform: scale(0) translate(-50%, -50%);
+    background-image: url(../img/dzialanie_mech.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .mechanic img {
+    z-index: 0;
+    width: 33%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .mechanic img.active {
+    z-index: 5;
+    -webkit-transform: scale(2.5);
+            transform: scale(2.5);
+    -webkit-filter: drop-shadow(0 0 2em rgba(0, 0, 0, 0.9));
+            filter: drop-shadow(0 0 2em rgba(0, 0, 0, 0.9));
+  }
+  .mechanic.active {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: scale(1) translate(-50%, -50%);
+            transform: scale(1) translate(-50%, -50%);
+  }
+  .mechanic .close {
+    position: absolute;
+    width: 5em;
+    height: 5em;
+    right: 3em;
+    top: 3em;
+    background-image: url(../img/cross.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #b02d70;
+    border: 0.3em solid white;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .kolko {
+    position: absolute;
+    width: 17%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: scale(1) translate(-50%, -50%);
+            transform: scale(1) translate(-50%, -50%);
+  }
+  .kolko img {
+    width: 100%;
+    height: 100%;
+  }
+  .kolko.active {
+    position: absolute;
+    z-index: 10;
+    -webkit-box-shadow: 0 0 3em rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 3em rgba(0, 0, 0, 0.9);
+  }
+  .kolko .logo {
+    position: absolute;
+    left: 50%;
+    top: 1em;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    background-color: darksalmon;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .kolko:nth-of-type(1) {
+    top: -20%;
+    left: 2%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .kolko:nth-of-type(1).active {
+    top: -0%;
+    left: 15%;
+    -webkit-transform: scale(2.5);
+            transform: scale(2.5);
+  }
+  .kolko:nth-of-type(1) .logo {
+    background-image: url(../img/PTP.png);
+  }
+  .kolko:nth-of-type(2) {
+    top: -20%;
+    left: 82%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .kolko:nth-of-type(2).active {
+    top: -0%;
+    left: 65%;
+    -webkit-transform: scale(2.5);
+            transform: scale(2.5);
+  }
+  .kolko:nth-of-type(2) .logo {
+    background-image: url(../img/WHO.svg);
+  }
+  .kolko:nth-of-type(3) {
+    top: 18%;
+    left: 8%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .kolko:nth-of-type(3).active {
+    top: 24%;
+    left: 18%;
+    -webkit-transform: scale(2.5);
+            transform: scale(2.5);
+  }
+  .kolko:nth-of-type(4) {
+    top: 18%;
+    left: 75%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .kolko:nth-of-type(4) img {
+    display: block;
+  }
+  .kolko:nth-of-type(4) #kolko_para {
+    opacity: 1;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    position: relative;
+  }
+  .kolko:nth-of-type(4) #kolko_bezy {
+    opacity: 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    position: absolute;
+  }
+  .kolko:nth-of-type(4).active {
+    top: 20%;
+    left: 50%;
+    -webkit-transform: scale(2.5);
+            transform: scale(2.5);
+  }
+  .kolko:nth-of-type(4).active #kolko_para {
+    opacity: 0;
+  }
+  .kolko:nth-of-type(4).active #kolko_bezy {
+    opacity: 1;
+  }
+  .kolko:nth-of-type(5) {
+    top: 65%;
+    left: 30%;
+  }
+  .kolko:nth-of-type(6) {
+    background-image: url(../img/kolko_alko.svg);
+    top: 65%;
+    left: 70%;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    -webkit-transform: scale(1) translate(-50%, -50%);
+            transform: scale(1) translate(-50%, -50%);
+  }
+  .kolko:nth-of-type(6) img {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    opacity: 0;
+  }
+  .kolko:nth-of-type(6).active {
+    -webkit-transform: scale(2.5) translate(-50%, -50%);
+            transform: scale(2.5) translate(-50%, -50%);
+  }
+  .kolko:nth-of-type(6).active img {
+    opacity: 1;
+  }
+  .kolko:nth-of-type(7) {
+    top: 80%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .kolko:nth-of-type(7) .planets {
+    display: none;
+  }
+  .kolko:nth-of-type(7).active {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: scale(2.5) translate(-25%, -50%);
+            transform: scale(2.5) translate(-25%, -50%);
+  }
+  .kolko:nth-of-type(7).active .planets {
+    display: block;
+    -webkit-box-shadow: 0 0 3em rgba(0, 0, 0, 0);
+            box-shadow: 0 0 3em rgba(0, 0, 0, 0);
+    background-color: rgba(255, 255, 255, 0);
+  }
+  .kolko:nth-of-type(7).active div {
+    position: absolute;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 2em orange;
+            box-shadow: 0 0 2em orange;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-animation: turn 4s linear infinite;
+            animation: turn 4s linear infinite;
+  }
+  @-webkit-keyframes turn {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @keyframes turn {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  .kolko:nth-of-type(7).active div img {
+    width: 3em;
+    height: 3em;
+  }
+  .kolko:nth-of-type(7).active div .sun {
+    left: -5em;
+    -webkit-animation: turn2 5s linear infinite;
+            animation: turn2 5s linear infinite;
+  }
+  @-webkit-keyframes turn2 {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(-720deg);
+              transform: rotate(-720deg);
+    }
+  }
+  @keyframes turn2 {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(-720deg);
+              transform: rotate(-720deg);
+    }
+  }
+  .kolko:nth-of-type(7).active div .moon {
+    right: -5em;
+    -webkit-animation: turn3 4s linear infinite;
+            animation: turn3 4s linear infinite;
+  }
+  @-webkit-keyframes turn3 {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(-360deg);
+              transform: rotate(-360deg);
+    }
+  }
+  @keyframes turn3 {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(-360deg);
+              transform: rotate(-360deg);
+    }
+  }
+}
+
 @media (max-width: 1160px) {
   .background--container {
     position: absolute;
@@ -876,7 +1418,7 @@ table {
     position: absolute;
     width: 50%;
     height: 40%;
-    top: 28%;
+    top: 15%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
